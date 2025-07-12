@@ -4,108 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AnkiCoin | The Return of the Gods</title>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Unbounded', sans-serif;
-      background: linear-gradient(to bottom right, #000000, #1a1a1a);
-      color: #f5f5f5;
-      text-align: center;
-    }
-    .hero {
-      padding: 80px 20px 40px;
-    }
-    .hero img {
-      max-width: 160px;
-      margin-bottom: 20px;
-    }
-    .title {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-    }
-    .countdown {
-      font-size: 1.8rem;
-      margin: 20px 0;
-      color: #ffc107;
-    }
-    .contract-info {
-      margin-top: 30px;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-    .links {
-      margin-top: 30px;
-    }
-    .links a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background-color: #ffc107;
-      color: #000;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .links a:hover {
-      background-color: #ffdb4d;
-    }
-    .social {
-      margin-top: 40px;
-    }
-    .social a {
-      color: #888;
-      margin: 0 10px;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-  </style>
+  <meta name="description" content="AnkiCoin - The Return of the Gods. A revolutionary cryptocurrency bringing divine power to the digital realm.">
+  <meta name="keywords" content="AnkiCoin, cryptocurrency, blockchain, DeFi, digital currency, gods">
+  
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="logo.png">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ankicoin.com/">
+  <meta property="og:title" content="AnkiCoin | The Return of the Gods">
+  <meta property="og:description" content="A revolutionary cryptocurrency bringing divine power to the digital realm.">
+  <meta property="og:image" content="logo.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ankicoin.com/">
+  <meta property="twitter:title" content="AnkiCoin | The Return of the Gods">
+  <meta property="twitter:description" content="A revolutionary cryptocurrency bringing divine power to the digital realm.">
+  <meta property="twitter:image" content="logo.png">
 </head>
 <body>
-  <div class="hero">
-    <img src="logo.png" alt="AnkiCoin Logo">
-    <div class="title">The Return of the Gods</div>
-    <div id="countdown" class="countdown">Countdown: Loading...</div>
-    <div class="links">
-      <a href="https://app.uniswap.org/#/swap?outputCurrency=0x23564253FC155270B179Cacf51efafd5522aCDFa" target="_blank">Trade on Uniswap</a>
-      <a href="https://etherscan.io/token/0x23564253FC155270B179Cacf51efafd5522aCDFa" target="_blank">View on Etherscan</a>
-    </div>
-    <div class="contract-info">
-      Contract Address:<br>
-      0x23564253FC155270B179Cacf51efafd5522aCDFa
-    </div>
-    <div class="social">
-      <a href="https://t.me/ankicoin72" target="_blank">Telegram</a>
-    </div>
+  <!-- Particle system -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- Main content -->
+  <div class="container">
+    <main class="hero fade-in-up">
+      <!-- Logo section -->
+      <div class="logo-container">
+        <img src="logo.png" alt="AnkiCoin Logo" class="logo" id="logo">
+      </div>
+      
+      <!-- Title and subtitle -->
+      <h1 class="title">The Return of the Gods</h1>
+      <p class="subtitle">Awakening the divine power within digital currency</p>
+      
+      <!-- Countdown timer -->
+      <div id="countdown" class="countdown loading">
+        <span id="countdown-text">Countdown: Loading...</span>
+      </div>
+      
+      <!-- Action buttons -->
+      <div class="action-buttons">
+        <a href="https://app.uniswap.org/#/swap?outputCurrency=0x23564253FC155270B179Cacf51efafd5522aCDFa" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn">
+          <span>🔥</span>
+          Trade on Uniswap
+        </a>
+        <a href="https://etherscan.io/token/0x23564253FC155270B179Cacf51efafd5522aCDFa" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn">
+          <span>🔍</span>
+          View on Etherscan
+        </a>
+      </div>
+      
+      <!-- Contract information -->
+      <div class="contract-info">
+        <h2 class="contract-title">Smart Contract Address</h2>
+        <div class="contract-address" 
+             id="contract-address" 
+             onclick="copyToClipboard('0x23564253FC155270B179Cacf51efafd5522aCDFa')"
+             title="Click to copy">
+          0x23564253FC155270B179Cacf51efafd5522aCDFa
+        </div>
+      </div>
+      
+      <!-- Social links -->
+      <div class="social-links">
+        <a href="https://t.me/ankicoin72" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="social-link">
+          <span>💬</span>
+          Join Telegram
+        </a>
+      </div>
+    </main>
   </div>
-
-  <script>
-    const countdownEl = document.getElementById('countdown');
-    const targetDate = new Date("2025-08-08T00:00:00Z").getTime();
-
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance <= 0) {
-        countdownEl.innerHTML = "The Return has begun.";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownEl.innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    };
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+  
+  <!-- Toast notification -->
+  <div id="toast" class="toast"></div>
+  
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
