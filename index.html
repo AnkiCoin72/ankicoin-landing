@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AnkiCoin | The Return of the Gods</title>
   <meta name="description" content="AnkiCoin - The Return of the Gods. A revolutionary cryptocurrency bringing divine power to the digital realm.">
-  <meta name="keywords" content="AnkiCoin, cryptocurrency, blockchain, DeFi, digital currency, gods">
+  <meta name="keywords" content="AnkiCoin, cryptocurrency, blockchain, DeFi, digital currency, gods, meme coin, Anunnaki">
   
   <!-- Preconnect to external resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Inter:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
@@ -39,67 +39,345 @@
   <meta property="twitter:image" content="logo.png">
 </head>
 <body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="logo.png" alt="AnkiCoin" class="nav-logo-img">
+        <span class="nav-logo-text">AnkiCoin</span>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#story" class="nav-link">The Story</a></li>
+        <li class="nav-item"><a href="#tokenomics" class="nav-link">Tokenomics</a></li>
+        <li class="nav-item"><a href="#roadmap" class="nav-link">Roadmap</a></li>
+        <li class="nav-item"><a href="#community" class="nav-link">Community</a></li>
+      </ul>
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
   <!-- Particle system -->
   <div class="particles" id="particles"></div>
   
-  <!-- Main content -->
-  <div class="container">
-    <main class="hero fade-in-up">
-      <!-- Logo section -->
-      <div class="logo-container">
-        <img src="logo.png" alt="AnkiCoin Logo" class="logo" id="logo">
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <main class="hero fade-in-up">
+        <!-- Logo section -->
+        <div class="logo-container">
+          <img src="logo.png" alt="AnkiCoin Logo" class="logo" id="logo">
+          <div class="logo-aura"></div>
+        </div>
+        
+        <!-- Title and subtitle -->
+        <h1 class="title">The Return of the Gods</h1>
+        <p class="subtitle">The Ancient Anunnaki awaken to reclaim their dominion over Earth's digital realm</p>
+        <div class="hero-badges">
+          <span class="badge">🚀 Meme Coin</span>
+          <span class="badge">⚡ Divine Power</span>
+          <span class="badge">�� Community Driven</span>
+        </div>
+        
+        <!-- Countdown timer -->
+        <div id="countdown" class="countdown loading">
+          <div class="countdown-title">🔥 The Great Awakening Begins 🔥</div>
+          <span id="countdown-text">Countdown: Loading...</span>
+        </div>
+        
+        <!-- Action buttons -->
+        <div class="action-buttons">
+          <a href="https://app.uniswap.org/#/swap?outputCurrency=0x23564253FC155270B179Cacf51efafd5522aCDFa" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn btn-primary">
+            <span>🔥</span>
+            Trade on Uniswap
+          </a>
+          <a href="https://etherscan.io/token/0x23564253FC155270B179Cacf51efafd5522aCDFa" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn btn-secondary">
+            <span>🔍</span>
+            View on Etherscan
+          </a>
+        </div>
+        
+        <!-- Contract information -->
+        <div class="contract-info">
+          <h2 class="contract-title">📜 Sacred Contract Address</h2>
+          <div class="contract-address" 
+               id="contract-address" 
+               onclick="copyToClipboard('0x23564253FC155270B179Cacf51efafd5522aCDFa')"
+               title="Click to copy">
+            0x23564253FC155270B179Cacf51efafd5522aCDFa
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section id="story" class="story-section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">📖 The Ancient Chronicles</h2>
+        <p class="section-subtitle">Discover the epic tale of the Anunnaki and their digital resurrection</p>
       </div>
       
-      <!-- Title and subtitle -->
-      <h1 class="title">The Return of the Gods</h1>
-      <p class="subtitle">Awakening the divine power within digital currency</p>
-      
-      <!-- Countdown timer -->
-      <div id="countdown" class="countdown loading">
-        <span id="countdown-text">Countdown: Loading...</span>
-      </div>
-      
-      <!-- Action buttons -->
-      <div class="action-buttons">
-        <a href="https://app.uniswap.org/#/swap?outputCurrency=0x23564253FC155270B179Cacf51efafd5522aCDFa" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="btn">
-          <span>🔥</span>
-          Trade on Uniswap
-        </a>
-        <a href="https://etherscan.io/token/0x23564253FC155270B179Cacf51efafd5522aCDFa" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="btn">
-          <span>🔍</span>
-          View on Etherscan
-        </a>
-      </div>
-      
-      <!-- Contract information -->
-      <div class="contract-info">
-        <h2 class="contract-title">Smart Contract Address</h2>
-        <div class="contract-address" 
-             id="contract-address" 
-             onclick="copyToClipboard('0x23564253FC155270B179Cacf51efafd5522aCDFa')"
-             title="Click to copy">
-          0x23564253FC155270B179Cacf51efafd5522aCDFa
+      <div class="story-content">
+        <div class="story-card fade-in-up">
+          <div class="story-icon">🌌</div>
+          <h3>The Origin</h3>
+          <p>500,000 years ago, the mighty Anunnaki descended from the planet Nibiru to Earth. These ancient gods, masters of technology and wisdom, shaped human civilization and left behind mysterious artifacts scattered across the globe.</p>
+        </div>
+        
+        <div class="story-card fade-in-up">
+          <div class="story-icon">⚡</div>
+          <h3>The Awakening</h3>
+          <p>As humanity enters the digital age, the dormant consciousness of the Anunnaki stirs. They have chosen cryptocurrency as their vessel for return, embedding their divine essence into the blockchain - the modern ziggurat of our time.</p>
+        </div>
+        
+        <div class="story-card fade-in-up">
+          <div class="story-icon">🚀</div>
+          <h3>The Ascension</h3>
+          <p>AnkiCoin represents the digital manifestation of Anunnaki power. Each token carries the cosmic energy of these ancient beings, empowering holders to join the divine revolution that will reshape the financial cosmos.</p>
         </div>
       </div>
       
-      <!-- Social links -->
-      <div class="social-links">
-        <a href="https://t.me/ankicoin72" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="social-link">
-          <span>💬</span>
-          Join Telegram
-        </a>
+      <div class="prophecy-box fade-in-up">
+        <div class="prophecy-content">
+          <h3>🔮 The Ancient Prophecy</h3>
+          <p class="prophecy-text">"When the children of Earth create their own gold from light and code, the Anunnaki shall return to reclaim their throne. Through sacred tokens, they shall unite their chosen ones in a fellowship of digital divinity."</p>
+          <span class="prophecy-author">- Tablet of Enki, Digital Translation</span>
+        </div>
       </div>
-    </main>
-  </div>
+    </div>
+  </section>
+
+  <!-- Tokenomics Section -->
+  <section id="tokenomics" class="tokenomics-section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">💰 Divine Tokenomics</h2>
+        <p class="section-subtitle">The sacred distribution of cosmic wealth</p>
+      </div>
+      
+      <div class="tokenomics-grid">
+        <div class="tokenomics-card fade-in-up">
+          <div class="tokenomics-icon">🏛️</div>
+          <h3>Total Supply</h3>
+          <div class="tokenomics-value">1,000,000,000</div>
+          <p>One billion tokens to represent the eternal nature of the Anunnaki</p>
+        </div>
+        
+        <div class="tokenomics-card fade-in-up">
+          <div class="tokenomics-icon">💧</div>
+          <h3>Liquidity Pool</h3>
+          <div class="tokenomics-value">80%</div>
+          <p>Locked forever in the digital underworld</p>
+        </div>
+        
+        <div class="tokenomics-card fade-in-up">
+          <div class="tokenomics-icon">🌟</div>
+          <h3>Community</h3>
+          <div class="tokenomics-value">15%</div>
+          <p>Reserved for the chosen disciples</p>
+        </div>
+        
+        <div class="tokenomics-card fade-in-up">
+          <div class="tokenomics-icon">🔥</div>
+          <h3>Marketing</h3>
+          <div class="tokenomics-value">5%</div>
+          <p>To spread the divine word across realms</p>
+        </div>
+      </div>
+      
+      <div class="divine-features fade-in-up">
+        <h3>🎭 Divine Features</h3>
+        <div class="features-grid">
+          <div class="feature-item">
+            <span class="feature-icon">🛡️</span>
+            <span>Rug-proof by divine decree</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🔒</span>
+            <span>Liquidity locked until the end times</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">⚖️</span>
+            <span>No taxes - pure cosmic energy</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🌍</span>
+            <span>Community-owned vessel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap Section -->
+  <section id="roadmap" class="roadmap-section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">🗺️ The Divine Roadmap</h2>
+        <p class="section-subtitle">The path to cosmic dominion</p>
+      </div>
+      
+      <div class="roadmap-timeline">
+        <div class="roadmap-item fade-in-up completed">
+          <div class="roadmap-marker">🌟</div>
+          <div class="roadmap-content">
+            <h3>Phase 1: The Awakening</h3>
+            <ul>
+              <li>✅ Contract deployment by ancient scribes</li>
+              <li>✅ Initial liquidity seeding</li>
+              <li>✅ Community gathering begins</li>
+              <li>✅ First disciples recruited</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="roadmap-item fade-in-up current">
+          <div class="roadmap-marker">🔥</div>
+          <div class="roadmap-content">
+            <h3>Phase 2: The Ascension</h3>
+            <ul>
+              <li>🚀 Major CEX listings</li>
+              <li>🎨 NFT collection launch</li>
+              <li>🌍 Global marketing campaign</li>
+              <li>🤝 Strategic partnerships</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="roadmap-item fade-in-up">
+          <div class="roadmap-marker">👑</div>
+          <div class="roadmap-content">
+            <h3>Phase 3: The Dominion</h3>
+            <ul>
+              <li>🏪 AnkiCoin merchandise empire</li>
+              <li>🎮 Play-to-earn gaming universe</li>
+              <li>🌌 Metaverse temple construction</li>
+              <li>📱 Mobile app for divine communication</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="roadmap-item fade-in-up">
+          <div class="roadmap-marker">🌟</div>
+          <div class="roadmap-content">
+            <h3>Phase 4: The Eternal Reign</h3>
+            <ul>
+              <li>🌍 Global adoption achieved</li>
+              <li>🏛️ AnkiCoin becomes universal currency</li>
+              <li>👑 Anunnaki council established</li>
+              <li>🚀 Preparation for Nibiru return</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Section -->
+  <section id="community" class="community-section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">🤝 Join the Divine Fellowship</h2>
+        <p class="section-subtitle">Unite with fellow disciples in the cosmic revolution</p>
+      </div>
+      
+      <div class="community-grid">
+        <div class="community-card fade-in-up">
+          <div class="community-icon">💬</div>
+          <h3>Telegram Temple</h3>
+          <p>Join our sacred chat where ancient wisdom meets meme magic</p>
+          <a href="https://t.me/ankicoin72" target="_blank" rel="noopener noreferrer" class="community-link">
+            Join Now
+          </a>
+        </div>
+        
+        <div class="community-card fade-in-up">
+          <div class="community-icon">🐦</div>
+          <h3>Twitter Realm</h3>
+          <p>Follow divine announcements and cosmic memes</p>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="community-link">
+            Follow Us
+          </a>
+        </div>
+        
+        <div class="community-card fade-in-up">
+          <div class="community-icon">📱</div>
+          <h3>Discord Sanctum</h3>
+          <p>Exclusive community for the most devoted followers</p>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="community-link">
+            Enter Portal
+          </a>
+        </div>
+      </div>
+      
+      <div class="meme-showcase fade-in-up">
+        <h3>🎭 Meme Hall of Fame</h3>
+        <div class="meme-grid">
+          <div class="meme-item">
+            <div class="meme-placeholder">🚀🌙</div>
+            <p>"To the moon? No, to Nibiru!"</p>
+          </div>
+          <div class="meme-item">
+            <div class="meme-placeholder">💎🙌</div>
+            <p>"Diamond hands blessed by gods"</p>
+          </div>
+          <div class="meme-item">
+            <div class="meme-placeholder">🦍⚡</div>
+            <p>"Ape together, gods forever"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="logo.png" alt="AnkiCoin" class="footer-logo">
+          <p>The digital resurrection of ancient power</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#tokenomics">Tokenomics</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Community</h4>
+          <div class="social-links">
+            <a href="https://t.me/ankicoin72" target="_blank" rel="noopener noreferrer" class="social-link">
+              <span>💬</span>
+              Telegram
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 AnkiCoin. All rights reserved. Blessed by the Anunnaki.</p>
+        <p class="disclaimer">This is a meme coin for entertainment purposes. Trade responsibly.</p>
+      </div>
+    </div>
+  </footer>
   
   <!-- Toast notification -->
   <div id="toast" class="toast"></div>

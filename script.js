@@ -11,6 +11,8 @@ class AnkiCoinWebsite {
     this.setupParticles();
     this.setupAnimations();
     this.setupInteractions();
+    this.setupNavigation();
+    this.setupScrollEffects();
   }
 
   // Countdown Timer
@@ -180,6 +182,155 @@ class AnkiCoinWebsite {
     }
   }
 
+  // Navigation Setup
+  setupNavigation() {
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Mobile menu toggle
+    navToggle?.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      navToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+          const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  }
+
+  // Scroll Effects
+  setupScrollEffects() {
+    const navbar = document.getElementById('navbar');
+    
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      
+      // Navbar background change on scroll
+      if (scrolled > 50) {
+        navbar?.classList.add('scrolled');
+      } else {
+        navbar?.classList.remove('scrolled');
+      }
+
+      // Parallax effect for hero section
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection) {
+        const speed = 0.5;
+        heroSection.style.transform = `translateY(${scrolled * speed}px)`;
+      }
+
+      // Animate elements on scroll
+      this.animateOnScroll();
+    });
+  }
+
+  // Animate elements when they come into view
+  animateOnScroll() {
+    const elements = document.querySelectorAll('.fade-in-up');
+    const windowHeight = window.innerHeight;
+    
+    elements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementVisible = 150;
+      
+      if (elementTop < windowHeight - elementVisible) {
+        element.classList.add('visible');
+      }
+    });
+  }
+
+  // Enhanced Particle System
+  createAdvancedParticles() {
+    const particleContainer = document.getElementById('particles');
+    const particleCount = 75;
+
+    for (let i = 0; i < particleCount; i++) {
+      this.createAdvancedParticle(particleContainer);
+    }
+  }
+
+  createAdvancedParticle(container) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    
+    // Random positioning and properties
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const size = Math.random() * 3 + 1;
+    const duration = Math.random() * 8 + 6;
+    const delay = Math.random() * 2;
+    
+    particle.style.cssText = `
+      left: ${x}%;
+      top: ${y}%;
+      width: ${size}px;
+      height: ${size}px;
+      animation-duration: ${duration}s;
+      animation-delay: ${delay}s;
+      opacity: ${Math.random() * 0.8 + 0.2};
+    `;
+    
+    container.appendChild(particle);
+    this.particles.push(particle);
+
+    // Remove particle after animation
+    setTimeout(() => {
+      if (particle.parentNode) {
+        particle.parentNode.removeChild(particle);
+        this.particles = this.particles.filter(p => p !== particle);
+      }
+    }, (duration + delay) * 1000);
+  }
+
+  // Section-specific animations
+  setupSectionAnimations() {
+    // Story cards animation
+    const storyCards = document.querySelectorAll('.story-card');
+    storyCards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 0.2}s`;
+    });
+
+    // Tokenomics cards animation
+    const tokenomicsCards = document.querySelectorAll('.tokenomics-card');
+    tokenomicsCards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 0.15}s`;
+    });
+
+    // Roadmap items animation
+    const roadmapItems = document.querySelectorAll('.roadmap-item');
+    roadmapItems.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.3}s`;
+    });
+
+    // Community cards animation
+    const communityCards = document.querySelectorAll('.community-card');
+    communityCards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 0.2}s`;
+    });
+  }
+
   // Utility Functions
   showToast(message, type = 'success') {
     const toast = document.getElementById('toast');
@@ -189,6 +340,47 @@ class AnkiCoinWebsite {
     setTimeout(() => {
       toast.classList.remove('show');
     }, 3000);
+  }
+
+  // Easter egg: Konami code
+  setupKonamiCode() {
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+    let konamiIndex = 0;
+
+    document.addEventListener('keydown', (e) => {
+      if (e.code === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+          this.activateGodMode();
+          konamiIndex = 0;
+        }
+      } else {
+        konamiIndex = 0;
+      }
+    });
+  }
+
+  activateGodMode() {
+    this.showToast('🌟 The Anunnaki have blessed you with divine powers! 🌟', 'success');
+    
+    // Add special visual effects
+    document.body.classList.add('god-mode');
+    
+    // Create extra particles
+    this.createAdvancedParticles();
+    
+    // Enhanced logo glow
+    const logo = document.getElementById('logo');
+    if (logo) {
+      logo.style.filter = 'drop-shadow(0 0 50px rgba(255, 215, 0, 0.8))';
+    }
+    
+    setTimeout(() => {
+      document.body.classList.remove('god-mode');
+      if (logo) {
+        logo.style.filter = '';
+      }
+    }, 10000);
   }
 }
 
@@ -216,6 +408,13 @@ function copyToClipboard(text) {
 let website;
 document.addEventListener('DOMContentLoaded', () => {
   website = new AnkiCoinWebsite();
+  
+  // Setup additional features
+  website.setupSectionAnimations();
+  website.setupKonamiCode();
+  
+  // Trigger initial scroll animation
+  website.animateOnScroll();
 });
 
 // Add smooth scrolling for any anchor links
