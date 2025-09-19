@@ -1,0 +1,542 @@
+/* AnkiCoin Whitepaper Specific Styles */
+
+.whitepaper-container {
+  padding-top: 70px;
+  min-height: 100vh;
+  background: var(--dark-bg);
+}
+
+.whitepaper-header {
+  text-align: center;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.whitepaper-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-gold);
+  margin-bottom: 2rem;
+  filter: drop-shadow(var(--shadow-gold));
+}
+
+.whitepaper-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  font-family: 'Cinzel', serif;
+}
+
+.whitepaper-subtitle {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+  font-family: 'Cinzel', serif;
+}
+
+.whitepaper-tagline {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.whitepaper-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.version, .date {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* Table of Contents */
+.toc-section {
+  background: rgba(255, 215, 0, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.toc-section h2 {
+  color: var(--primary-gold);
+  margin-bottom: 1.5rem;
+  font-family: 'Cinzel', serif;
+}
+
+.toc ol {
+  list-style: none;
+  counter-reset: toc-counter;
+  padding: 0;
+}
+
+.toc li {
+  counter-increment: toc-counter;
+  margin-bottom: 0.5rem;
+}
+
+.toc li::before {
+  content: counter(toc-counter) ". ";
+  color: var(--primary-gold);
+  font-weight: 600;
+}
+
+.toc a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+  display: inline-block;
+}
+
+.toc a:hover {
+  color: var(--primary-gold);
+}
+
+/* Whitepaper Sections */
+.whitepaper-section {
+  margin-bottom: 4rem;
+  background: rgba(26, 26, 26, 0.4);
+  border-radius: 20px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.whitepaper-section h2 {
+  font-size: 2.5rem;
+  color: var(--primary-gold);
+  margin-bottom: 2rem;
+  font-family: 'Cinzel', serif;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  padding-bottom: 1rem;
+}
+
+.whitepaper-section h3 {
+  font-size: 1.8rem;
+  color: var(--primary-gold);
+  margin: 2rem 0 1rem 0;
+  font-family: 'Cinzel', serif;
+}
+
+.whitepaper-section h4 {
+  font-size: 1.3rem;
+  color: var(--primary-gold);
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.whitepaper-section p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.whitepaper-section ul, .whitepaper-section ol {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.whitepaper-section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Special Elements */
+.mythology-quote {
+  background: rgba(0, 0, 0, 0.4);
+  border-left: 4px solid var(--primary-gold);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 0 15px 15px 0;
+}
+
+.mythology-quote blockquote {
+  font-size: 1.3rem;
+  color: var(--primary-gold);
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-family: 'Cinzel', serif;
+}
+
+.mythology-quote cite {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Values Grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.value-item {
+  background: rgba(255, 215, 0, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.value-item h4 {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Contract Info */
+.contract-info {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.contract-info code {
+  background: rgba(255, 215, 0, 0.1);
+  color: var(--primary-gold);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  display: block;
+  margin: 1rem 0;
+  word-break: break-all;
+}
+
+/* Tokenomics Chart */
+.tokenomics-chart {
+  margin: 2rem 0;
+}
+
+.chart-item {
+  margin-bottom: 1rem;
+}
+
+.chart-bar {
+  background: var(--gold-gradient);
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  color: var(--dark-bg);
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Utility Grid */
+.utility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.utility-item {
+  background: rgba(255, 215, 0, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.utility-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+}
+
+.utility-item h4 {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+}
+
+/* Roadmap Timeline */
+.roadmap-timeline {
+  margin: 2rem 0;
+}
+
+.roadmap-phase {
+  background: rgba(255, 215, 0, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.roadmap-phase.completed {
+  background: rgba(40, 167, 69, 0.1);
+  border-color: rgba(40, 167, 69, 0.3);
+}
+
+.roadmap-phase.current {
+  background: rgba(255, 215, 0, 0.15);
+  border-color: rgba(255, 215, 0, 0.5);
+  animation: currentGlow 3s ease-in-out infinite;
+}
+
+.roadmap-phase h3 {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+}
+
+.phase-status {
+  font-size: 0.9rem;
+  color: var(--primary-gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+/* Governance Areas */
+.governance-areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.governance-item {
+  background: rgba(255, 215, 0, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+}
+
+.governance-item h4 {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+}
+
+/* Risk Grid */
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.risk-item {
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.risk-item h4 {
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+
+/* Community Pillars */
+.community-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.pillar-item {
+  background: rgba(255, 215, 0, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.pillar-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+}
+
+.pillar-item h4 {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Legal Disclaimer */
+.legal-disclaimer {
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.legal-disclaimer h4 {
+  color: #dc3545;
+  margin-bottom: 1rem;
+}
+
+.legal-disclaimer ul {
+  color: var(--text-muted);
+}
+
+/* Conclusion CTA */
+.conclusion-cta {
+  background: rgba(255, 215, 0, 0.1);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.conclusion-cta h3 {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+  font-family: 'Cinzel', serif;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+.whitepaper-footer {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-gold);
+}
+
+/* Ensure content is visible immediately on whitepaper and terms pages */
+.whitepaper-page .fade-in-up,
+.terms-page .fade-in-up {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  animation: none !important;
+}
+
+/* Override any conflicting styles */
+.whitepaper-page .whitepaper-section,
+.terms-page .whitepaper-section {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Chart bar widths */
+.chart-bar-88 {
+  width: 88%;
+}
+
+.chart-bar-6 {
+  width: 6%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .whitepaper-header {
+    padding: 2rem 1rem;
+  }
+  
+  .whitepaper-section {
+    padding: 2rem 1rem;
+  }
+  
+  .whitepaper-meta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .values-grid,
+  .utility-grid,
+  .governance-areas,
+  .risk-grid,
+  .community-pillars {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .whitepaper-title {
+    font-size: 2rem;
+  }
+  
+  .whitepaper-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .whitepaper-section h2 {
+    font-size: 2rem;
+  }
+  
+  .chart-bar {
+    height: 60px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}

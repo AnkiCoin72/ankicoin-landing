@@ -1,0 +1,45 @@
+# AnkiCoin Robots.txt
+# The Return of the Gods - Cryptocurrency Project
+
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Disallow sensitive or unnecessary files
+Disallow: /sw.js
+Disallow: /manifest.json
+Disallow: /*.css$
+Disallow: /*.js$
+
+# Allow CSS and JS for proper rendering
+User-agent: Googlebot
+Allow: /*.css$
+Allow: /*.js$
+
+User-agent: Bingbot
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
+Sitemap: https://ankicoin.com/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1

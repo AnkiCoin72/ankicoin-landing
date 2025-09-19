@@ -20,6 +20,8 @@ class AnkiCoinWebsite {
     const countdownEl = document.getElementById('countdown');
     const countdownText = document.getElementById('countdown-text');
     
+    if (!countdownEl || !countdownText) return; // Exit if countdown elements don't exist
+    
     const updateCountdown = () => {
       const now = new Date().getTime();
       const distance = this.targetDate - now;
@@ -67,6 +69,8 @@ class AnkiCoinWebsite {
   // Particle System
   setupParticles() {
     const particleContainer = document.getElementById('particles');
+    if (!particleContainer) return; // Exit if particles container doesn't exist
+    
     const particleCount = 50;
 
     for (let i = 0; i < particleCount; i++) {
@@ -132,16 +136,7 @@ class AnkiCoinWebsite {
       });
     }
 
-    // Parallax effect on scroll
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const parallaxElements = document.querySelectorAll('.hero');
-      
-      parallaxElements.forEach(element => {
-        const speed = 0.5;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
-      });
-    });
+    // Removed parallax effect to prevent hero section from going behind other sections
   }
 
   // Interactive Features
@@ -202,20 +197,26 @@ class AnkiCoinWebsite {
       });
     });
 
-    // Smooth scrolling for navigation links
+    // Smooth scrolling for navigation links (only for internal links)
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
+        const href = link.getAttribute('href');
         
-        if (targetSection) {
-          const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
+        // Only handle internal links that start with #
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = href.substring(1);
+          const targetSection = document.getElementById(targetId);
+          
+          if (targetSection) {
+            const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
         }
+        // External links (like whitepaper.html) will work normally
       });
     });
   }
@@ -234,12 +235,7 @@ class AnkiCoinWebsite {
         navbar?.classList.remove('scrolled');
       }
 
-      // Parallax effect for hero section
-      const heroSection = document.querySelector('.hero-section');
-      if (heroSection) {
-        const speed = 0.5;
-        heroSection.style.transform = `translateY(${scrolled * speed}px)`;
-      }
+      // Removed parallax effect for hero section to prevent overlapping issues
 
       // Animate elements on scroll
       this.animateOnScroll();
@@ -404,18 +400,49 @@ function copyToClipboard(text) {
   });
 }
 
-// Initialize website when DOM is loaded
+// Initialize website when DOM is loaded (only on main page)
 let website;
 document.addEventListener('DOMContentLoaded', () => {
-  website = new AnkiCoinWebsite();
+  // Only initialize the main website functionality on the main page
+  const isMainPage = document.getElementById('main-content') !== null;
   
-  // Setup additional features
-  website.setupSectionAnimations();
-  website.setupKonamiCode();
-  
-  // Trigger initial scroll animation
-  website.animateOnScroll();
+  if (isMainPage) {
+    website = new AnkiCoinWebsite();
+    
+    // Setup additional features
+    website.setupSectionAnimations();
+    website.setupKonamiCode();
+    
+    // Trigger initial scroll animation
+    website.animateOnScroll();
+  } else {
+    // For other pages (whitepaper, terms), just setup basic navigation
+    setupBasicNavigation();
+  }
 });
+
+// Basic navigation for non-main pages
+function setupBasicNavigation() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  
+  // Mobile menu toggle
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      navToggle.classList.toggle('active');
+    });
+  }
+  
+  // Close mobile menu when clicking on a link
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navMenu) navMenu.classList.remove('active');
+      if (navToggle) navToggle.classList.remove('active');
+    });
+  });
+}
 
 // Add smooth scrolling for any anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
